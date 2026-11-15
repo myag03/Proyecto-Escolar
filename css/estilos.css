@@ -1,0 +1,160 @@
+/* =====================================================
+   ESTILOS · INSTITUTO AMÉRICA
+   Orden: 1 Colores · 2 Base · 3 Menú · 4 Tarjetas
+          5 Secciones · 6 Extras · 7 Pantallas pequeñas
+   ===================================================== */
+
+/* 1. COLORES Y MEDIDAS (cámbialos aquí) */
+:root {
+  --azul: #1e3a6b;
+  --dorado: #d9a83a;
+  --fondo: #f3f4f9;
+  --blanco: #ffffff;
+  --texto: #222831;
+
+  --verde-suave: #e6f3e8;
+  --naranja-suave: #fff1dc;
+  --rosa-suave: #fbe3ec;
+  --azul-suave: #e4ecfa;
+
+  --alto-menu: 60px;
+  --redondeo: 14px;
+  --sombra: 0 2px 10px rgba(30, 58, 107, .12);
+  --sombra-fuerte: 0 8px 22px rgba(30, 58, 107, .2);
+}
+
+/* 2. BASE */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--alto-menu) + 16px); }
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+  padding-top: var(--alto-menu);
+}
+img { max-width: 100%; display: block; }
+h1, h2 { color: var(--azul); line-height: 1.25; }
+h1 { font-size: clamp(1.8rem, 5vw, 2.5rem); margin-bottom: 16px; }
+h2 { font-size: clamp(1.4rem, 4vw, 1.8rem); margin-bottom: 10px; }
+main { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+section { padding: 32px 0 8px; }
+
+/* 3. MENÚ FIJO */
+.menu {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--alto-menu);
+  background: var(--azul);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 clamp(12px, 3vw, 24px);
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+.menu .logo { color: #fff; font-size: 1.3rem; font-weight: 700; text-decoration: none; }
+.menu ul { display: flex; gap: 28px; list-style: none; }
+.menu a.enlace {
+  color: #fff; text-decoration: none; padding: 6px 0;
+  border-bottom: 3px solid transparent;
+  transition: border-color .25s, color .25s;
+}
+.menu a.enlace:hover { color: var(--dorado); }
+.menu a.enlace.activo { border-bottom-color: var(--dorado); }
+.menu a:focus-visible, .boton-menu:focus-visible, .subir:focus-visible {
+  outline: 2px solid var(--dorado); outline-offset: 4px;
+}
+.boton-menu { display: none; background: none; border: 0; color: #fff; font-size: 1.8rem; cursor: pointer; }
+
+/* Barra de progreso de lectura (la mueve el JS) */
+.progreso {
+  position: absolute; left: 0; bottom: 0; height: 4px; width: 0;
+  background: var(--dorado);
+}
+
+/* 4. TARJETAS */
+.tarjeta {
+  background: var(--blanco);
+  border-radius: var(--redondeo);
+  padding: clamp(16px, 4vw, 24px);
+  box-shadow: var(--sombra);
+  margin-bottom: 18px;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.galeria figure {
+  background: var(--blanco);
+  border-radius: var(--redondeo);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform .25s, box-shadow .25s;
+}
+.galeria figure:hover { transform: translateY(-6px); box-shadow: var(--sombra-fuerte); }
+.galeria .arte { padding: 22px; }
+.galeria .arte img { width: 70%; margin: 0 auto; }
+.galeria figcaption { padding: 12px; text-align: center; font-size: .95rem; }
+
+/* Colores de fondo de las ilustraciones */
+.verde   { background: var(--verde-suave); }
+.naranja { background: var(--naranja-suave); }
+.rosa    { background: var(--rosa-suave); }
+.azul    { background: var(--azul-suave); }
+
+/* 5. SECCIONES CON TEXTO + IMAGEN */
+.dos-columnas {
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: 24px; align-items: center;
+}
+.dos-columnas.invertida { grid-template-columns: 1fr 1.1fr; }
+.dos-columnas.invertida .arte { order: -1; }
+.dos-columnas .arte { border-radius: var(--redondeo); padding: 24px; }
+.dos-columnas .arte img { width: 85%; margin: 0 auto; transition: transform .4s; }
+.dos-columnas .arte:hover img { transform: scale(1.06) rotate(-2deg); }
+
+.boton {
+  display: inline-block; margin-top: 12px;
+  background: var(--azul); color: #fff; text-decoration: none;
+  padding: 10px 20px; border-radius: 999px; font-weight: 600;
+  transition: background .25s, transform .25s;
+}
+.boton:hover { background: var(--dorado); color: var(--azul); transform: translateY(-2px); }
+
+/* 6. EXTRAS */
+footer { text-align: center; color: #fff; background: var(--azul); padding: 20px 12px; margin-top: 36px; font-size: .9rem; }
+
+.subir {
+  position: fixed; right: 18px; bottom: 18px;
+  width: 46px; height: 46px; border: 0; border-radius: 50%;
+  background: var(--dorado); color: var(--azul); font-size: 1.4rem; font-weight: 700;
+  cursor: pointer; box-shadow: var(--sombra-fuerte);
+  opacity: 0; pointer-events: none; transform: translateY(12px);
+  transition: opacity .3s, transform .3s;
+}
+.subir.visible { opacity: 1; pointer-events: auto; transform: none; }
+
+/* Aparecer al hacer scroll (clase que pone el JS) */
+.aparece { opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
+.aparece.visible { opacity: 1; transform: none; }
+
+/* 7. PANTALLAS PEQUEÑAS */
+@media (max-width: 700px) {
+  .boton-menu { display: block; }
+  .menu ul {
+    position: absolute; top: var(--alto-menu); left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--azul);
+    max-height: 0; overflow: hidden; transition: max-height .35s;
+  }
+  .menu ul.abierto { max-height: 240px; }
+  .menu ul li { padding: 14px 20px; border-top: 1px solid rgba(255, 255, 255, .15); }
+  .dos-columnas, .dos-columnas.invertida { grid-template-columns: 1fr; }
+  .dos-columnas .arte, .dos-columnas.invertida .arte { order: -1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+  .aparece { opacity: 1; transform: none; }
+}

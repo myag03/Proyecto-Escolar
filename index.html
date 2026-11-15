@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi página | Instituto America</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- MENÚ: el href de cada enlace debe coincidir con el id de su sección -->
+  <nav class="menu" aria-label="Menú principal">
+    <a class="logo" href="#inicio">Instituto América</a>
+    <button class="boton-menu" aria-label="Abrir menú">☰</button>
+    <ul>
+      <li><a class="enlace" href="#inicio">Inicio</a></li>
+      <li><a class="enlace" href="#tema2">Artitectura</a></li>
+      <li><a class="enlace" href="#tema3">INGIENERIA</a></li>
+    </ul>
+    <div class="progreso"></div>
+  </nav>
+
+  <main>
+
+    <!-- SECCIÓN 1: INICIO -->
+    <section id="inicio">
+      <h1>Turismo en Panama</h1>
+      <div class="tarjeta">
+        <!-- ✏️ Escribe aquí tu presentación -->
+        <p>El turismo en Panama es una actividad que permite conocer los paisajes naturales, la historia,la cultura y las tradiciones del pais.</p>
+      </div>
+
+      <!-- ✏️ Tres ilustraciones: cambia el archivo en src, el color (verde, naranja, rosa, azul) y el texto -->
+      <div class="galeria">
+        <figure class="aparece">
+          <div class="arte verde"><img src="img/taboga.JPEG" alt="Libro abierto"></div>
+          <figcaption>Taboga</figcaption>
+        </figure>
+        <figure class="aparece">
+          <div class="arte azul"><img src="img/Museo interoseanico.JPEG" alt="globo de dialogo"></div>
+          <figcaption>Museo interoseanico</figcaption>
+        </figure>
+        <figure class="aparece">
+          <div class="arte naranja"><img src="img/Panama la vieja.JPEG" alt="Bombillo"></div>
+          <figcaption>Panama la vieja</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: ARTITECTURA-->
+    <section id="tema2">
+      <div class="tarjeta dos-columnas aparece">
+        <div>
+          <!-- ✏️ Cambia el título y el texto -->
+          <h2>¿Porque visitar Panama?</h2>
+          <p>Panama es un destino que ofrece diferentes experiencias para los visitantes. se pueden conocer lugares historicos, disfrutar de playas, recorrer senderos naturales</p>
+          <a class="boton" href="#tema3">Ir al Tema 3</a>
+        </div>
+        <div class="arte crema"><img src="img/El canal de Panama.JPEG" alt="computadora"></div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: INGIENERIA -->
+    <section id="tema3">
+      <div class="tarjeta dos-columnas invertida aparece">
+        <div>
+          <!-- ✏️ Cambia el título y el texto -->
+          <h2>Cultura y sabores de Panama</h2>
+          <p>Panama posee una gran diversidad cultural formada por los pueblos indigenas y las comunidades que han contribuido a su historia </p>
+        </div>
+        <div class="arte azul"><img src="img/Casco Antiguo.JPEG" alt="Computadora con código HTML"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <!-- ✏️ Escribe aquí los nombres del grupo -->
+    Hecho por Lyzette Jimenez, Mya Gonzales 12-BH · Instituto América
+  </footer>
+
+  <button class="subir" aria-label="Volver arriba">↑</button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
